@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div>
-      <h1>Azure Static Web Apps custom roles demo</h1>
+      <h1>Azure Static Web Apps  demo</h1>
       <div>
       {!userInfo &&
               <a  href={`/.auth/login/aad?post_login_redirect_uri=${redirect}`}>
@@ -34,11 +34,11 @@ function App() {
             {userInfo && <a href={`/.auth/logout?post_logout_redirect_uri=${redirect}`}>Logout</a>}
       </div>
       <div>
-      {userInfo && (
-        <div>
-          Hello {userInfo.userDetails}
-        </div>
-      )}
+        {userInfo && (
+          <div>
+            Hello {userInfo.userDetails}
+          </div>
+        )}
       </div>
     </div>
   );
