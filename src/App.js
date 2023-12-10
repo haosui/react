@@ -33,11 +33,13 @@ function App() {
             } 
             {userInfo && <a href={`/.auth/logout?post_logout_redirect_uri=${redirect}`}>Logout</a>}
       </div>
+      <div>
       {userInfo && (
         <div>
-          Hello {userInfo.clientPrincipal && userInfo.clientPrincipal.userDetails}
+          Hello {userInfo}
         </div>
       )}
+      </div>
       <a>saa</a>
     </div>
   );
