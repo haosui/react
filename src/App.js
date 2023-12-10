@@ -13,7 +13,7 @@ function App() {
     try {
       const response = await fetch('/.auth/me');
       const payload = await response.json();
-      const { clientPrincipal } = payload.userDetails;
+      const { clientPrincipal } = payload.clientPrincipal.userDetails;
       return clientPrincipal;
     } catch (error) {
       console.error('No profile could be found');
