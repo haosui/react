@@ -13,7 +13,7 @@ function App() {
     try {
       const response = await fetch('/.auth/me');
       const payload = await response.json();
-      const { clientPrincipal } = payload.clientPrincipal.userDetails;
+      const { clientPrincipal } = payload;
       return clientPrincipal;
     } catch (error) {
       console.error('No profile could be found');
@@ -28,7 +28,7 @@ function App() {
       <div>
       {!userInfo &&
               <a  href={`/.auth/login/aad?post_login_redirect_uri=${redirect}`}>
-                login
+                logins
               </a>
             } 
             {userInfo && <a href={`/.auth/logout?post_logout_redirect_uri=${redirect}`}>Logout</a>}
@@ -36,7 +36,7 @@ function App() {
       <div>
       {userInfo && (
         <div>
-          Hello {userInfo}
+          Hello {userInfo.userDetails}
         </div>
       )}
       </div>
